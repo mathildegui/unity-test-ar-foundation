@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{7F193B2E-CA3E-584E-FEC1-B899C934352E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LunarConsole", "LunarConsole.csproj", "{4E473B57-00C1-B8EA-BECD-532D3DD2620E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LunarConsoleEditor", "LunarConsoleEditor.csproj", "{5B5543F6-398F-7C20-70FF-30B642F4267C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F193B2E-CA3E-584E-FEC1-B899C934352E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F193B2E-CA3E-584E-FEC1-B899C934352E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F193B2E-CA3E-584E-FEC1-B899C934352E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F193B2E-CA3E-584E-FEC1-B899C934352E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E473B57-00C1-B8EA-BECD-532D3DD2620E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E473B57-00C1-B8EA-BECD-532D3DD2620E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E473B57-00C1-B8EA-BECD-532D3DD2620E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E473B57-00C1-B8EA-BECD-532D3DD2620E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B5543F6-398F-7C20-70FF-30B642F4267C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B5543F6-398F-7C20-70FF-30B642F4267C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B5543F6-398F-7C20-70FF-30B642F4267C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B5543F6-398F-7C20-70FF-30B642F4267C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

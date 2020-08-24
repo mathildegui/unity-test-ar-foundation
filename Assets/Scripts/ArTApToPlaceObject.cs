@@ -13,8 +13,9 @@ public class ArTApToPlaceObject : MonoBehaviour {
     // Start is called before the first frame update
     void Start() {
         manager = FindObjectOfType<ARRaycastManager>();
-        visual = transform.GetChild(0).gameObject;
-        visual.SetActive(false);
+        /* visual = transform.GetChild(0).gameObject;
+        if(visual) 
+            visual.SetActive(false); */
     }
 
     // Update is called once per frame
@@ -29,9 +30,9 @@ public class ArTApToPlaceObject : MonoBehaviour {
             transform.position = hits[0].pose.position;
             transform.rotation = hits[0].pose.rotation;
         }
-
-        if(!visual.activeInHierarchy) {
+/* 
+        if(visual && !visual.activeInHierarchy) {
             visual.SetActive(true);
-        }
+        } */
     }
 }

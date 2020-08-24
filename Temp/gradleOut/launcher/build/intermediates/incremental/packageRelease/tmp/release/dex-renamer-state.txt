@@ -1,4 +1,4 @@
-#Sun Aug 23 12:55:38 CEST 2020
+#Mon Aug 24 13:55:48 CEST 2020
 base.0=/Users/mathildeguillossou/Documents/unity/learn/TESTAR/Temp/gradleOut/launcher/build/intermediates/dex/release/out/classes.dex
 path.0=classes.dex
 renamed.0=classes.dex

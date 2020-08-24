@@ -10,7 +10,7 @@ public class RandomBalloon : MonoBehaviour
     int randomInt;
 
     void Start() {
-        InvokeRepeating("randomBalloons", 0.0f, 3.5f);
+        InvokeRepeating("randomBalloons", 0.0f, 2.5f);
     }
 
     void randomBalloons() {
@@ -20,5 +20,19 @@ public class RandomBalloon : MonoBehaviour
                 var obj = Instantiate(balloons[randomInt], cube.transform.position, pos.rotation);
                 obj.GetComponent<Rigidbody>().AddForce(Vector3.up * floatStrength);
            }
+    }
+
+    void Update() {
+        if (Input.GetMouseButtonDown(0)) {
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            if(Physics.Raycast(ray, out hit, Mathf.Infinity)){
+                GameObject obj = hit.collider.gameObject;
+                // if(obj.tag == "Cube") {
+                    obj.SetActive(false);
+                // }
+                // obj.GetComponent<RPS_Interaction>().action.Invoke();
+            }
+        }    
     }
 }

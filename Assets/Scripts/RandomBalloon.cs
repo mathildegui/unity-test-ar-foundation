@@ -8,31 +8,55 @@ public class RandomBalloon : MonoBehaviour
     [SerializeField] Transform pos;
     [SerializeField] float floatStrength = 3.5f;
     int randomInt;
+    private GameObject cube;
+    private int count = 0;
+    private int countExplode = 0;
+    private GameObject countObject;
+    private TextMesh countTextMesh;
 
     void Start() {
+        initializeObjectS();
         InvokeRepeating("randomBalloons", 0.0f, 2.5f);
     }
 
     void randomBalloons() {
-            randomInt = Random.Range(0, balloons.Length);
-            var cube = GameObject.FindGameObjectWithTag("Cube");
-            if(cube) {
-                var obj = Instantiate(balloons[randomInt], cube.transform.position, pos.rotation);
-                obj.GetComponent<Rigidbody>().AddForce(Vector3.up * floatStrength);
-           }
+        randomInt = Random.Range(0, balloons.Length);
+        cube = GameObject.FindGameObjectWithTag("Cube");
+        if(cube) {
+            count++;
+            var placedCube = Instantiate(balloons[randomInt], cube.transform.position, pos.rotation);
+            
+            updateCounter();
+        }
     }
 
     void Update() {
         if (Input.GetMouseButtonDown(0)) {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            if(Physics.Raycast(ray, out hit, Mathf.Infinity)){
+            if(Physics.Raycast(ray, out hit, Mathf.Infinity)) {
                 GameObject obj = hit.collider.gameObject;
-                // if(obj.tag == "Cube") {
-                    obj.SetActive(false);
-                // }
-                // obj.GetComponent<RPS_Interaction>().action.Invoke();
+                countExplode++;
+                updateCounter();
+                obj.SetActive(false);
             }
-        }    
+        }
+    }
+
+    void FixedUpdate() {
+        foreach (var item in FindObjectsOfType<Rigidbody>()) {
+            item.AddForce(Vector3.up * floatStrength * Time.deltaTime);
+        }
+    }
+
+    private void initializeObjectS() {
+        countObject = new GameObject();
+        countObject.AddComponent<TextMesh>();
+        countTextMesh = countObject.GetComponent<TextMesh>();
+    }
+
+    private void updateCounter() {
+        cube.GetComponent<TextMesh>().text = countExplode.ToString() + " / " + count;
+        // countTextMesh.text = countExplode.ToString() + " / " + count;
     }
 }

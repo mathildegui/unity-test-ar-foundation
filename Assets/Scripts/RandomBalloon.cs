@@ -12,10 +12,8 @@ public class RandomBalloon : MonoBehaviour
     private int count = 0;
     private int countExplode = 0;
     private GameObject countObject;
-    private TextMesh countTextMesh;
 
     void Start() {
-        initializeObjectS();
         InvokeRepeating("randomBalloons", 0.0f, 2.5f);
     }
 
@@ -49,14 +47,7 @@ public class RandomBalloon : MonoBehaviour
         }
     }
 
-    private void initializeObjectS() {
-        countObject = new GameObject();
-        countObject.AddComponent<TextMesh>();
-        countTextMesh = countObject.GetComponent<TextMesh>();
-    }
-
     private void updateCounter() {
         cube.GetComponent<TextMesh>().text = countExplode.ToString() + " / " + count;
-        // countTextMesh.text = countExplode.ToString() + " / " + count;
     }
 }

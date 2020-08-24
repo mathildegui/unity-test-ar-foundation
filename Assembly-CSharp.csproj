@@ -36,9 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ArTApToPlaceObject.cs" />
      <Compile Include="Assets\Scripts\ObjectSpawner.cs" />
      <Compile Include="Assets\Scripts\RandomBalloon.cs" />
+     <Compile Include="Assets\Scripts\ArPlaceObject.cs" />
      <None Include="Assets\LunarConsole\readme.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.1.1f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>

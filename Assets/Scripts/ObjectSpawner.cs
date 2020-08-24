@@ -1,14 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
 
 public class ObjectSpawner : MonoBehaviour
 {
     public GameObject objectToSpawn;
-    private ArTApToPlaceObject placementIndicator;
+    private ArPlaceObject placementIndicator;
+    private ARPlaneManager planeManager;
 
     void Start() {
-        placementIndicator = FindObjectOfType<ArTApToPlaceObject>();
+        placementIndicator = FindObjectOfType<ArPlaceObject>();
+        planeManager = FindObjectOfType<ARPlaneManager>();
     }
 
     void Update()
@@ -18,6 +21,9 @@ public class ObjectSpawner : MonoBehaviour
                 GameObject ojb = Instantiate(objectToSpawn, placementIndicator.transform.position, placementIndicator.transform.rotation);
                 var indicator = GameObject.FindGameObjectWithTag("PlacementIndicator");
                 indicator.SetActive(false);
+                foreach (var plane in planeManager.trackables) {
+                    plane.gameObject.SetActive(false);
+                }
             }
         }
     }

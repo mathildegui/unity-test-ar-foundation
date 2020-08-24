@@ -22,8 +22,8 @@ public class RandomBalloon : MonoBehaviour
         cube = GameObject.FindGameObjectWithTag("Cube");
         if(cube) {
             count++;
-            var placedCube = Instantiate(balloons[randomInt], cube.transform.position, pos.rotation);
-            
+            var b = Instantiate(balloons[randomInt], cube.transform.position, pos.rotation);
+            applyForce(b);
             updateCounter();
         }
     }
@@ -43,8 +43,16 @@ public class RandomBalloon : MonoBehaviour
 
     void FixedUpdate() {
         foreach (var item in FindObjectsOfType<Rigidbody>()) {
-            item.AddForce(Vector3.up * floatStrength * Time.deltaTime);
+            // var vect = new Vector3(0, 1, Random.Range(0, 100));
+            // Debug.Log(vect.ToString());
+            // item.AddForce(vect * floatStrength * Time.deltaTime);
         }
+    }
+
+    private void applyForce (GameObject balloon) {
+        var vect = new Vector3(Random.Range(-5, 5), 1, Random.Range(-5, 5));
+        var strengh = Random.Range(2, 5);
+        balloon.GetComponent<Rigidbody>().AddForce(vect * strengh);
     }
 
     private void updateCounter() {

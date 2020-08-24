@@ -106,7 +106,7 @@
 60-->/Users/mathildeguillossou/Documents/unity/learn/TESTAR/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:16:5-101
 61            android:name="unity.build-id"
 61-->/Users/mathildeguillossou/Documents/unity/learn/TESTAR/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:16:16-45
-62            android:value="7e03813f-0c06-4afd-a7b2-4a4f3867a761" />
+62            android:value="77d6490b-ff8c-4e94-a41d-aa18bf57e874" />
 62-->/Users/mathildeguillossou/Documents/unity/learn/TESTAR/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:16:46-98
 63        <meta-data
 63-->/Users/mathildeguillossou/Documents/unity/learn/TESTAR/Temp/gradleOut/unityLibrary/src/main/AndroidManifest.xml:17:5-88
